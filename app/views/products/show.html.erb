@@ -1,10 +1,20 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @product %>
+<div class="container-lg card">
+  <div class="card-header">
+    <h3><%= @product.name %></h3>
+  </div>
+  <div class="card-body">
+    <h5>Description:</h5> <p class="card-text"><%= @product.description %></p>
+    <h5>Link:</h5> <p class="card-text"><%= @product.link %></p>
+    <h5>Board:</h5> <p class="card-text"><%= @product.board %></p>
+    <h5>Tagged Topics:</h5> <p class="card-text"><%= @product.tagged_topic %></p>
+    <h5>Image Link:</h5> <p class="card-text"><%= @product.image_link %></p>
+  </div>
 
-<div>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
-  <%= link_to "Back to products", products_path %>
-
-  <%= button_to "Destroy this product", @product, method: :delete %>
+  <div class="mb-3">
+    <%= link_to "Edit this product", edit_product_path(@product), class: "btn btn-info" %>
+    <%= link_to "Back to products", products_path, class: "btn btn-secondary" %>
+    <%= link_to "Destroy this product", @product, method: :delete, class: "btn btn-danger" %>
+  </div>
 </div>
