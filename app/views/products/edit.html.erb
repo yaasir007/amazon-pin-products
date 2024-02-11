@@ -1,18 +1,16 @@
-<h1>Editing product</h1>
+<div class="container-sm text-light mt-5">
+  <h1 class="text-light mb-3">Editing <%= @product.name %>...</h1>
 
-<%= render "form", product: @product %>
-
-<br>
-
-<div>
-  <%= link_to "Show this product", @product %> |
-  <%= link_to "Back to products", products_path %>
-</div>
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-</div>
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <%= simple_form_for @product do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :link %>
+    <%= f.input :board %>
+    <%= f.input :tagged_topic %>
+    <%= f.input :image_link %>
+    <div class="d-flex gap-3">
+    <%= f.button :submit, class: "btn btn-primary" %>
+    <%= link_to "Back to products", products_path, class: "btn btn-secondary" %>
+    </div>
+  <% end %>
 </div>
