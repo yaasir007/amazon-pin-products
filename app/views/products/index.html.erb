@@ -16,7 +16,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @products.each_with_index do |product, index| %>
+      <% @products.reverse.each_with_index do |product, index| %>
         <tr>
           <td scope="row"><%= index + 1 %></td>
           <td><%= product.name %></td>
