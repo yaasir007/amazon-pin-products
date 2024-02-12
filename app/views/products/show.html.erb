@@ -8,6 +8,15 @@
     <h5>Board:</h5> <p class="card-text"><%= @product.board %></p>
     <h5>Tagged Topics:</h5> <p class="card-text"><%= @product.tagged_topic %></p>
     <h5>Image Link:</h5> <p class="card-text"><%= @product.image_link %></p>
+    <h5>Uploaded:</h5>
+    <p class="card-text">
+      <% if @product.uploaded %>
+        Uploaded Successfully. ✅
+      <% else %>
+        This product has not been uploaded yet. 🟥
+      <% end %>
+    </p>
+
   </div>
 
   <div class="mb-3">

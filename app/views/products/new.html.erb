@@ -9,6 +9,7 @@
     <%= f.input :board %>
     <%= f.input :tagged_topic %>
     <%= f.input :image_link %>
+    <span class="d-flex gap-2"><p>Uploaded:</p> <%= f.check_box :uploaded, class: "checkbox-size" %></span>
     <div class="d-flex gap-3">
     <%= f.button :submit, class: "btn btn-primary" %>
     <%= link_to "Back to products", products_path, class: "btn btn-secondary" %>
